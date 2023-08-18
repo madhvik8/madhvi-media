@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import PersonIcon from '@mui/icons-material/Person';
+import { makeStyles } from '@mui/material';
 
-function App() {
+
+const useStyles = makeStyles({
+  button: {
+    color:"white",
+    backgroundColor:"black"
+  },
+});
+const App = () => {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+     <Button
+     variant="contained" 
+     size="large" 
+     startIcon={<PersonIcon />}
+     className={classes.button}
+     >
+     MATERIAL UI
+     </Button>
+     </div>
+  )
 }
-
 export default App;
